@@ -37,28 +37,34 @@ public class BioskopApp extends JFrame implements ActionListener {
         String[] jadwals = {"10.00", "12.00", "14.00", "16.00", "18.00", "20.00", "22.00"};
         jadwalCombo = new JComboBox<>(jadwals);
         mainPanel.add(jadwalCombo);
-        
+
         // Label kursi
         kursiLabel = new JLabel("Kursi:");
         mainPanel.add(kursiLabel);
-        
+
         // Check box kursi
-        kursiA = new JCheckBox("A");
-        mainPanel.add(kursiA);
-        kursiB = new JCheckBox("B");
-        mainPanel.add(kursiB);
-        kursiC = new JCheckBox("C");
-        mainPanel.add(kursiC);
-        kursiD = new JCheckBox("D");
-        mainPanel.add(kursiD);
-        kursiE = new JCheckBox("E");
-        mainPanel.add(kursiE);
+//        kursiA = new JCheckBox("A");
+//        mainPanel.add(kursiA);
+//        kursiB = new JCheckBox("B");
+//        mainPanel.add(kursiB);
+//        kursiC = new JCheckBox("C");
+//        mainPanel.add(kursiC);
+//        kursiD = new JCheckBox("D");
+//        mainPanel.add(kursiD);
+//        kursiE = new JCheckBox("E");
+//        mainPanel.add(kursiE);
+
+        // Check box kursi
+        setSize(400, 300);
+        Kursi kursi = new Kursi();
+        mainPanel.add(kursi.getKursiPanel());
+
 
         hargaLabel = new JLabel("Harga: ");
-        mainPanel.add(hargaLabel);  
+        mainPanel.add(hargaLabel);
         hargaLabel = new JLabel("");
-        mainPanel.add(hargaLabel); 
-        
+        mainPanel.add(hargaLabel);
+
         // Button pesan
         pesanButton = new JButton("Pesan");
         pesanButton.addActionListener(this);
@@ -79,13 +85,12 @@ public class BioskopApp extends JFrame implements ActionListener {
     }
     
     public static void main(String[] args) {
-    LoginUser loginUser = new LoginUser();
-    
-    // Jalankan LoginUser terlebih dahulu
-    loginUser.setVisible(true);
+//    LoginUser loginUser = new LoginUser();
+//    loginUser.setVisible(true);
+
     BioskopApp bioskopApp = new BioskopApp();
     // Setelah LoginUser selesai, jalankan BioskopApp
-    bioskopApp.setVisible(false);
+//    bioskopApp.setVisible(false);
     }
 
     @Override
