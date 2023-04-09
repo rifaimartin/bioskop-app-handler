@@ -10,7 +10,7 @@ public class BioskopApp extends JFrame implements ActionListener {
     private JLabel filmLabel, jadwalLabel, kursiLabel;
     private JComboBox<String> filmCombo, jadwalCombo;
     private JCheckBox kursiA, kursiB, kursiC, kursiD, kursiE;
-    private JButton pesanButton, batalButton;
+    private JButton pesanButton, batalButton, btnShowKursi;
     private JLabel hargaLabel;
     
     public BioskopApp() {
@@ -19,7 +19,10 @@ public class BioskopApp extends JFrame implements ActionListener {
         // Panel utama
         JPanel mainPanel = new JPanel(new GridLayout(8, 2, 10, 10));
         mainPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-       
+
+        JPanel panelKursi = new JPanel(new GridLayout(8, 2, 10, 10));
+        mainPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+
         // Label film
         filmLabel = new JLabel("Film:");
         mainPanel.add(filmLabel);
@@ -38,9 +41,17 @@ public class BioskopApp extends JFrame implements ActionListener {
         jadwalCombo = new JComboBox<>(jadwals);
         mainPanel.add(jadwalCombo);
 
-        // Label kursi
-        kursiLabel = new JLabel("Kursi:");
-        mainPanel.add(kursiLabel);
+        btnShowKursi = new JButton("Kursi");
+        btnShowKursi.addActionListener(e -> {
+            Kursi kursi = new Kursi();
+            kursi.getKursiPanel();
+            System.out.println(kursi);
+
+
+        });
+        this.add(btnShowKursi, BorderLayout.SOUTH);
+        setVisible(true);
+
 
         // Check box kursi
 //        kursiA = new JCheckBox("A");
@@ -53,12 +64,6 @@ public class BioskopApp extends JFrame implements ActionListener {
 //        mainPanel.add(kursiD);
 //        kursiE = new JCheckBox("E");
 //        mainPanel.add(kursiE);
-
-        // Check box kursi
-        setSize(400, 300);
-        Kursi kursi = new Kursi();
-        mainPanel.add(kursi.getKursiPanel());
-
 
         hargaLabel = new JLabel("Harga: ");
         mainPanel.add(hargaLabel);
@@ -90,7 +95,7 @@ public class BioskopApp extends JFrame implements ActionListener {
 
     BioskopApp bioskopApp = new BioskopApp();
     // Setelah LoginUser selesai, jalankan BioskopApp
-//    bioskopApp.setVisible(false);
+    bioskopApp.setVisible(true);
     }
 
     @Override

@@ -1,13 +1,17 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Kursi {
+public class Kursi extends JFrame implements ActionListener {
     private JCheckBox kursiA, kursiB, kursiC, kursiD, kursiE;
     private JPanel kursiPanel;
+    private JButton pilihKursi, batal;
+    private JFrame kursiFrame;
 
     public Kursi() {
-        kursiPanel = new JPanel(new GridLayout(3, 2, 10, 10));
-        kursiPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        kursiFrame = this;
+        kursiPanel = new JPanel();
         kursiA = new JCheckBox("A");
         kursiPanel.add(kursiA);
         kursiB = new JCheckBox("B");
@@ -18,6 +22,23 @@ public class Kursi {
         kursiPanel.add(kursiD);
         kursiE = new JCheckBox("E");
         kursiPanel.add(kursiE);
+
+        pilihKursi = new JButton("Pesan");
+        kursiPanel.add(pilihKursi);
+
+        batal = new JButton("Batal");
+        kursiPanel.add(batal);
+
+        batal.addActionListener(e -> {
+            kursiFrame.setVisible(false);
+            dispose();
+        });
+
+        setSize(400,200);
+
+        add(kursiPanel);
+        kursiFrame.setVisible(true);
+
     }
 
     public JPanel getKursiPanel() {
@@ -42,5 +63,10 @@ public class Kursi {
 
     public boolean isKursiESelected() {
         return kursiE.isSelected();
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
     }
 }

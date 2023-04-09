@@ -10,10 +10,13 @@ public class LoginUser extends JFrame implements ActionListener {
     private JPasswordField passwordField;
     private JButton loginButton;
 
+    private UserDatabase userDatabase;
+
     public LoginUser() {
         super("Login User");
 
-        
+        userDatabase = new UserDatabase("C:\\Users\\muhamad^rifai\\Documents\\UPH-CODE\\bioskop-app-handler\\src\\users.txt");
+
         JPanel mainPanel = new JPanel(new GridLayout(3, 2, 10, 10));
         mainPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
@@ -38,7 +41,8 @@ public class LoginUser extends JFrame implements ActionListener {
 
         setSize(300, 150);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        // setVisible(true);
+        setVisible(true);
+
     }
 
     public static void main(String[] args) {
@@ -51,8 +55,8 @@ public class LoginUser extends JFrame implements ActionListener {
             String username = usernameField.getText();
             char[] password = passwordField.getPassword();
 
-            // hardcode wkwkw
-            if (username.equals("user") && new String(password).equals("password")) {
+            if (userDatabase.isValidUser(username, new String(password))) {
+                String role = userDatabase.getUserRole(username);
                 JOptionPane.showMessageDialog(this, "Login berhasil!");
                 dispose();
                 new BioskopApp();
