@@ -17,6 +17,8 @@ public class LoginUser extends JFrame {
         JPanel mainPanel = new JPanel(new GridLayout(3, 2, 10, 10));
         mainPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
+        setLocationRelativeTo(null);
+
         JLabel usernameLabel = new JLabel("Username:");
         mainPanel.add(usernameLabel);
 

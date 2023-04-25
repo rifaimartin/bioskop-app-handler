@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 
 public class BioskopApp extends JFrame implements ActionListener {
     
-    private JLabel filmLabel, jadwalLabel, kursiLabel;
+    private JLabel filmLabel, jadwalLabel;
     private JComboBox<String> filmCombo, jadwalCombo;
     private JCheckBox kursiA, kursiB, kursiC, kursiD, kursiE;
     private JButton pesanButton, batalButton, btnShowKursi;
@@ -48,24 +48,9 @@ public class BioskopApp extends JFrame implements ActionListener {
             Kursi kursi = new Kursi();
             kursi.getKursiPanel();
             System.out.println(kursi);
-
-
         });
         this.add(btnShowKursi, BorderLayout.SOUTH);
         setVisible(true);
-
-
-        // Check box kursi
-//        kursiA = new JCheckBox("A");
-//        mainPanel.add(kursiA);
-//        kursiB = new JCheckBox("B");
-//        mainPanel.add(kursiB);
-//        kursiC = new JCheckBox("C");
-//        mainPanel.add(kursiC);
-//        kursiD = new JCheckBox("D");
-//        mainPanel.add(kursiD);
-//        kursiE = new JCheckBox("E");
-//        mainPanel.add(kursiE);
 
         hargaLabel = new JLabel("Harga: ");
         mainPanel.add(hargaLabel);

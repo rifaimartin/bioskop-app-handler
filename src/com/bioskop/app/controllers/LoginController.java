@@ -24,7 +24,6 @@ public class LoginController implements ActionListener {
         char[] password = loginUI.getPassword();
 
         if (userDatabase.isValidUser(username, new String(password))) {
-            String role = userDatabase.getUserRole(username);
             JOptionPane.showMessageDialog(loginUI, "Login berhasil!");
             loginUI.dispose();
             new BioskopApp().setVisible(true);
