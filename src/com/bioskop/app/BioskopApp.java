@@ -1,9 +1,11 @@
+package com.bioskop.app;
+
+import com.bioskop.app.ui.LoginUser;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 
 public class BioskopApp extends JFrame implements ActionListener {
     
@@ -88,14 +90,14 @@ public class BioskopApp extends JFrame implements ActionListener {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
     }
-    
-    public static void main(String[] args) {
-//    LoginUser loginUser = new LoginUser();
-//    loginUser.setVisible(true);
 
-    BioskopApp bioskopApp = new BioskopApp();
-    // Setelah LoginUser selesai, jalankan BioskopApp
-    bioskopApp.setVisible(true);
+    public static void main(String[] args) {
+        LoginUser loginUser = new LoginUser();
+        loginUser.setVisible(true);
+
+        BioskopApp bioskopApp = new BioskopApp();
+        // Setelah LoginUser selesai, jalankan BioskopApp
+        bioskopApp.setVisible(false);
     }
 
     @Override

@@ -1,3 +1,5 @@
+package com.bioskop.database;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.HashMap;
@@ -8,11 +10,13 @@ public class UserDatabase {
 
     private Map<String, String[]> userMap;
 
-    public UserDatabase(String filename) {
+
+    public UserDatabase() {
         userMap = new HashMap<>();
+        String filename = "users.txt - set with u specifik local directory";
 
         try {
-            File file = new File(filename);
+            File file = new File("C:\\Users\\muhamad^rifai\\Documents\\UPH-CODE\\bioskop-app-handler\\resources\\users.txt");
             Scanner scanner = new Scanner(file);
 
             while (scanner.hasNextLine()) {
