@@ -1,8 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="RunManager">
+  <component name="ChangeListManager">
+    <list default="true" id="ea3c76cd-38c8-44c7-8375-b3ccb758f23e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/bioskop/app/service/AuthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/bioskop/app/ui/Kursi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/bioskop/app/ui/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/bioskop/app/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/bioskop/app/controllers/LoginController.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2Ov0lVheZveJhrwl9iASpUU9nnM" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.bioskop.app" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.BioskopApp2">
     <configuration name="BioskopApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.bioskop.app.BioskopApp" />
+      <module name="bioskop-app-handler" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bioskop.app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BioskopApp2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.bioskop.app.BioskopApp2" />
       <module name="bioskop-app-handler" />
       <extension name="coverage">
         <pattern>
@@ -27,8 +82,38 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.BioskopApp2" />
         <item itemvalue="Application.BioskopApp" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ea3c76cd-38c8-44c7-8375-b3ccb758f23e" name="Default Changelist" comment="" />
+      <created>1682425899644</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1682425899644</updated>
+      <workItem from="1682425901246" duration="1786000" />
+      <workItem from="1682582622246" duration="748000" />
+      <workItem from="1682636802927" duration="5339000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
