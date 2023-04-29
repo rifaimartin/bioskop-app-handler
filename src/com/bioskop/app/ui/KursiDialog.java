@@ -5,6 +5,7 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
 
 public class KursiDialog extends JDialog implements ActionListener {
     private boolean[] kursiStatus;
@@ -26,6 +27,10 @@ public class KursiDialog extends JDialog implements ActionListener {
             mainPanel.add(kursiButtons[i]);
         }
 
+        JButton clearButton = new JButton("Clear");
+        clearButton.addActionListener(this);
+        mainPanel.add(clearButton);
+
         getContentPane().add(mainPanel);
 
         pack();
@@ -39,12 +44,23 @@ public class KursiDialog extends JDialog implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         JButton source = (JButton) e.getSource();
 
-        int kursiIndex = Integer.parseInt(source.getText()) - 1;
-        kursiStatus[kursiIndex] = false;
+        if (source.getText().equals("Clear")) {
+            Arrays.fill(kursiStatus, true);
 
-        source.setEnabled(false);
+            for (int i = 0; i < kursiButtons.length; i++) {
+                kursiButtons[i].setEnabled(kursiStatus[i]);
+            }
 
-        // Menutup dialog
-        dispose();
+            repaint();
+        } else {
+
+            int kursiIndex = Integer.parseInt(source.getText()) - 1;
+            kursiStatus[kursiIndex] = false;
+
+            source.setEnabled(false);
+
+            // Menutup dialog
+            dispose();
+        }
     }
 }

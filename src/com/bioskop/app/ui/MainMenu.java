@@ -5,12 +5,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
 
 public class MainMenu extends JFrame implements ActionListener {
     private JLabel filmLabel, jadwalLabel;
     private JComboBox<String> filmCombo, jadwalCombo;
     private JButton pesanButton, batalButton, btnShowKursi;
-    private JLabel hargaLabel;
     private boolean[] kursiStatus;
 
     public MainMenu(boolean[] kursiStatus) {
@@ -18,9 +18,14 @@ public class MainMenu extends JFrame implements ActionListener {
 
         this.kursiStatus = kursiStatus;
 
-        // Panel utama
-        JPanel mainPanel = new JPanel(new GridLayout(8, 2, 10, 10));
+        Arrays.fill(kursiStatus, true);
+
+        // main pannel
+        JPanel mainPanel = new JPanel(new GridLayout(6, 2, 10, 10));
         mainPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+
+        // sizing pannel
+        mainPanel.setPreferredSize(new Dimension(600, 400));
 
         // Label film
         filmLabel = new JLabel("Film:");
@@ -39,22 +44,35 @@ public class MainMenu extends JFrame implements ActionListener {
         String[] jadwal = {"10.00", "13.00", "16.00", "19.00", "22.00"};
         jadwalCombo = new JComboBox<>(jadwal);
         mainPanel.add(jadwalCombo);
+
         // Button show kursi
         btnShowKursi = new JButton("Lihat Kursi");
         btnShowKursi.addActionListener(this);
         mainPanel.add(btnShowKursi);
 
-        // Button pesan tiket
+        JPanel buttonPanel = new JPanel(new GridLayout(1, 2, 10, 0));
+
+        // pesan tiket
         pesanButton = new JButton("Pesan Tiket");
         pesanButton.addActionListener(this);
-        mainPanel.add(pesanButton);
+        pesanButton.setBackground(new Color(144, 238, 144));
+        buttonPanel.add(pesanButton);
 
-        // Button batalkan
+        // batalkan
         batalButton = new JButton("Batal");
         batalButton.addActionListener(this);
-        mainPanel.add(batalButton);
+        batalButton.setBackground(new Color(255, 182, 193));
+        buttonPanel.add(batalButton);
 
-        // Set frame properties
+        // Menambahkan buttonPanel ke dalam mainPanel
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 3;
+        gbc.gridwidth = 2;
+        gbc.insets = new Insets(10, 0, 0, 0);
+        mainPanel.add(buttonPanel, gbc);
+
+        // Set frame prop
         setContentPane(mainPanel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pack();
@@ -70,7 +88,15 @@ public class MainMenu extends JFrame implements ActionListener {
             kursiDialog.setVisible(true);
             kursiStatus = kursiDialog.getKursiStatus();
         } else if (e.getSource() == pesanButton) {
-            // Get selected film and jadwal
+
+            String kursiTerpilih = "";
+            for (int i = 0; i < kursiStatus.length; i++) {
+                if (!kursiStatus[i]) {
+                    kursiTerpilih += (i + 1) + ", ";
+                }
+            }
+
+            // Get film and jadwal
             String selectedFilm = (String) filmCombo.getSelectedItem();
             String selectedJadwal = (String) jadwalCombo.getSelectedItem();
 
@@ -78,20 +104,19 @@ public class MainMenu extends JFrame implements ActionListener {
             int price = calculatePrice(selectedFilm, selectedJadwal);
 
             // Show confirmation dialog
-            int confirm = JOptionPane.showConfirmDialog(this, "Anda akan memesan tiket untuk film " + selectedFilm + " pada jadwal " + selectedJadwal + " dengan harga " + price + ". Lanjutkan?", "Konfirmasi Pemesanan", JOptionPane.YES_NO_OPTION);
+            int confirm = JOptionPane.showConfirmDialog(this, "Anda akan memesan tiket untuk film " + selectedFilm + " pada jadwal " + selectedJadwal + " dengan harga " + price +  "nomor kursi :"  + kursiTerpilih + ". Lanjutkan?", "Konfirmasi Pemesanan", JOptionPane.YES_NO_OPTION);
             if (confirm == JOptionPane.YES_OPTION) {
-                // Show success message
+
                 JOptionPane.showMessageDialog(this, "Tiket berhasil dipesan!");
 
-                // Reset selected film and jadwal
                 filmCombo.setSelectedIndex(0);
                 jadwalCombo.setSelectedIndex(0);
             }
         } else if (e.getSource() == batalButton) {
-            // Show confirmation dialog
+            // Show confirm dialog
             int confirm = JOptionPane.showConfirmDialog(this, "Anda yakin ingin keluar?", "Konfirmasi", JOptionPane.YES_NO_OPTION);
             if (confirm == JOptionPane.YES_OPTION) {
-                // Close the frame
+                // Close frame
                 dispose();
             }
         }
