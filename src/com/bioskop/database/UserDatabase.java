@@ -41,9 +41,13 @@ public class UserDatabase {
         }
 
         String[] passwordAndRole = userMap.get(username);
+
+        // hashing
+        String hashPassword = password -> hashinh md5/sha256 ;
+
         String storedPassword = passwordAndRole[0];
 
-        return storedPassword.equals(password);
+        return storedPassword.equals(hashPassword);
     }
 
     public String getUserRole(String username) {

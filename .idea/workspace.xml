@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ea3c76cd-38c8-44c7-8375-b3ccb758f23e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/bioskop-app-handler/com/bioskop/app/ui/KursiDialog.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bioskop-app-handler/com/bioskop/app/ui/KursiDialog.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/users.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/bioskop/app/ui/KursiDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/bioskop/app/ui/KursiDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/bioskop/app/ui/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/bioskop/app/ui/MainMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,19 +67,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.BioskopApp2" />
@@ -99,7 +85,8 @@
       <workItem from="1682425901246" duration="1786000" />
       <workItem from="1682582622246" duration="748000" />
       <workItem from="1682636802927" duration="10226000" />
-      <workItem from="1682723068831" duration="4672000" />
+      <workItem from="1682723068831" duration="9127000" />
+      <workItem from="1682765610800" duration="604000" />
     </task>
     <servers />
   </component>
