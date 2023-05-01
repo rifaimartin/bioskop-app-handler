@@ -1,6 +1,5 @@
 package com.bioskop.app.ui;
 
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -11,10 +10,12 @@ public class MainMenu extends JFrame implements ActionListener {
     private JLabel filmLabel, jadwalLabel;
     private JComboBox<String> filmCombo, jadwalCombo;
     private JButton pesanButton, batalButton, btnShowKursi;
+    private FilmSelection filmSelectionPanel;
     private boolean[] kursiStatus;
 
     public MainMenu(boolean[] kursiStatus) {
-        super("Pemesanan Tiket Bioskop");
+        setTitle("Bioskop App");
+        setSize(500, 400);
 
         this.kursiStatus = kursiStatus;
 
@@ -25,28 +26,34 @@ public class MainMenu extends JFrame implements ActionListener {
         mainPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
         // sizing pannel
-        mainPanel.setPreferredSize(new Dimension(600, 400));
+        mainPanel.setPreferredSize(new Dimension(700, 500));
+
+        // Label film
+
 
         // Label film
         filmLabel = new JLabel("Film:");
+        filmLabel.setFont(new Font("Verdana", Font.BOLD, 18)); // ganti font dan ukurannya di sini
         mainPanel.add(filmLabel);
-
-        // Combo box film
-        String[] films = {"Avengers: Endgame", "Spider-Man: Far From Home", "Joker"};
-        filmCombo = new JComboBox<>(films);
-        mainPanel.add(filmCombo);
+        // Combo box f
+        filmSelectionPanel = new FilmSelection();
+//        filmSelectionPanel.setBorder(BorderFactory.createTitledBorder("Film"));
+        filmSelectionPanel.setPreferredSize(new Dimension(600, 300));
+        mainPanel.add(filmSelectionPanel);
 
         // Label jadwal
         jadwalLabel = new JLabel("Jadwal:");
+        jadwalLabel.setFont(new Font("Verdana", Font.BOLD, 18)); // ganti font dan ukurannya di sini
         mainPanel.add(jadwalLabel);
 
         // Combo box jadwal
-        String[] jadwal = {"10.00", "13.00", "16.00", "19.00", "22.00"};
+        String[] jadwal = {"Pilh Jadwal","10.00", "13.00", "16.00", "19.00", "22.00"};
         jadwalCombo = new JComboBox<>(jadwal);
         mainPanel.add(jadwalCombo);
 
         // Button show kursi
         btnShowKursi = new JButton("Lihat Kursi");
+        btnShowKursi.setFont(new Font("Calibri", Font.BOLD, 18)); // ganti font dan ukurannya di sini
         btnShowKursi.addActionListener(this);
         mainPanel.add(btnShowKursi);
 
@@ -54,12 +61,14 @@ public class MainMenu extends JFrame implements ActionListener {
 
         // pesan tiket
         pesanButton = new JButton("Pesan Tiket");
+        pesanButton.setFont(new Font("Calibri", Font.BOLD, 18)); // ganti font dan ukurannya di sini
         pesanButton.addActionListener(this);
         pesanButton.setBackground(new Color(144, 238, 144));
         buttonPanel.add(pesanButton);
 
         // batalkan
         batalButton = new JButton("Batal");
+        batalButton.setFont(new Font("Calibri", Font.BOLD, 18)); // ganti font dan ukurannya di sini
         batalButton.addActionListener(this);
         batalButton.setBackground(new Color(255, 182, 193));
         buttonPanel.add(batalButton);
@@ -97,20 +106,19 @@ public class MainMenu extends JFrame implements ActionListener {
             }
 
             // Get film and jadwal
-            String selectedFilm = (String) filmCombo.getSelectedItem();
+//            String selectedFilm = (String) filmCombo.getSelectedItem();
             String selectedJadwal = (String) jadwalCombo.getSelectedItem();
 
+            String selectedTitle = filmSelectionPanel.getSelectedFilmTitle();
+
             // Calculate price based on film and jadwal
-            int price = calculatePrice(selectedFilm, selectedJadwal);
+            int price = calculatePrice(selectedTitle, selectedJadwal);
 
             // Show confirmation dialog
-            int confirm = JOptionPane.showConfirmDialog(this, "Anda akan memesan tiket untuk film " + selectedFilm + " pada jadwal " + selectedJadwal + " dengan harga " + price +  "nomor kursi :"  + kursiTerpilih + ". Lanjutkan?", "Konfirmasi Pemesanan", JOptionPane.YES_NO_OPTION);
+            int confirm = JOptionPane.showConfirmDialog(this, "Anda akan memesan tiket untuk film " + selectedTitle + " pada jadwal " + selectedJadwal + " dengan harga " + price +  "nomor kursi :"  + kursiTerpilih + ". Lanjutkan?", "Konfirmasi Pemesanan", JOptionPane.YES_NO_OPTION);
             if (confirm == JOptionPane.YES_OPTION) {
 
                 JOptionPane.showMessageDialog(this, "Tiket berhasil dipesan!");
-
-                filmCombo.setSelectedIndex(0);
-                jadwalCombo.setSelectedIndex(0);
             }
         } else if (e.getSource() == batalButton) {
             // Show confirm dialog
