@@ -7,6 +7,7 @@ import com.bioskop.app.ui.MainMenu;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.security.NoSuchAlgorithmException;
 
 public class LoginController implements ActionListener {
 
@@ -23,13 +24,17 @@ public class LoginController implements ActionListener {
         String username = loginUI.getUsername();
         char[] password = loginUI.getPassword();
 
-        if (authService.authenticate(username, new String(password))){
-            JOptionPane.showMessageDialog(loginUI, "Login berhasil!");
-            loginUI.dispose();
-            boolean[] kursiStatus = new boolean[30];
-            new MainMenu(kursiStatus).setVisible(true);
-        } else {
-            JOptionPane.showMessageDialog(loginUI, "Username atau password salah.");
+        try {
+            if (authService.authenticate(username, new String(password))){
+                JOptionPane.showMessageDialog(loginUI, "Login berhasil!");
+                loginUI.dispose();
+                boolean[] kursiStatus = new boolean[30];
+                new MainMenu(kursiStatus).setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(loginUI, "Username atau password salah.");
+            }
+        } catch (NoSuchAlgorithmException noSuchAlgorithmException) {
+            noSuchAlgorithmException.printStackTrace();
         }
     }
 }

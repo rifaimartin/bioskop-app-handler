@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 public class MainMenu extends JFrame implements ActionListener {
     private JLabel filmLabel, jadwalLabel;
-    private JComboBox<String> filmCombo, jadwalCombo;
+    private JComboBox<String> jadwalCombo;
     private JButton pesanButton, batalButton, btnShowKursi;
     private FilmSelection filmSelectionPanel;
     private boolean[] kursiStatus;

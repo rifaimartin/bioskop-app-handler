@@ -2,9 +2,9 @@ package com.bioskop.database;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 public class UserDatabase {
 
@@ -35,7 +35,7 @@ public class UserDatabase {
         }
     }
 
-    public boolean isValidUser(String username, String password) {
+    public boolean isValidUser(String username, String password) throws NoSuchAlgorithmException {
         if (!userMap.containsKey(username)) {
             return false;
         }
@@ -44,7 +44,12 @@ public class UserDatabase {
 
         String storedPassword = passwordAndRole[0];
 
-        return storedPassword.equals(password);
+        String hashPassword  = hashSHA256(password.toLowerCase(Locale.ROOT));
+
+        System.out.println(hashPassword + "hash password");
+        System.out.println(storedPassword + "stored passwrpd");
+
+        return storedPassword.equals(hashPassword);
     }
 
     public String getUserRole(String username) {
@@ -52,6 +57,18 @@ public class UserDatabase {
         String role = passwordAndRole[1];
 
         return role;
+    }
+
+    public static String hashSHA256(String password) throws NoSuchAlgorithmException {
+        MessageDigest md = MessageDigest.getInstance("SHA-256");
+        byte[] hash = md.digest(password.getBytes());
+
+        // Konversi hasil hash ke bentuk string heksadesimal
+        StringBuilder sb = new StringBuilder();
+        for (byte b : hash) {
+            sb.append(String.format("%02x", b));
+        }
+        return sb.toString();
     }
 
 }
