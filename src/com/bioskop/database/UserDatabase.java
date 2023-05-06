@@ -23,9 +23,8 @@ public class UserDatabase {
                 String[] tokens = scanner.nextLine().split(",");
                 String username = tokens[0];
                 String password = tokens[1];
-                String role = tokens[2];
 
-                String[] passwordAndRole = { password, role };
+                String[] passwordAndRole = { password};
                 userMap.put(username, passwordAndRole);
             }
 
@@ -52,12 +51,6 @@ public class UserDatabase {
         return storedPassword.equals(hashPassword);
     }
 
-    public String getUserRole(String username) {
-        String[] passwordAndRole = userMap.get(username);
-        String role = passwordAndRole[1];
-
-        return role;
-    }
 
     public static String hashSHA256(String password) throws NoSuchAlgorithmException {
         MessageDigest md = MessageDigest.getInstance("SHA-256");

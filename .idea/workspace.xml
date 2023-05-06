@@ -3,14 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="ea3c76cd-38c8-44c7-8375-b3ccb758f23e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bioskop-app-handler/com/bioskop/app/controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bioskop-app-handler/com/bioskop/app/controllers/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bioskop-app-handler/com/bioskop/app/service/AuthService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bioskop-app-handler/com/bioskop/app/service/AuthService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bioskop-app-handler/com/bioskop/app/ui/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bioskop-app-handler/com/bioskop/app/ui/MainMenu.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/bioskop-app-handler/com/bioskop/database/UserDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bioskop-app-handler/com/bioskop/database/UserDatabase.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/users.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/bioskop/app/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/bioskop/app/controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/bioskop/app/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/bioskop/app/service/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/bioskop/app/ui/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/bioskop/app/ui/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/bioskop/app/BioskopApp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/bioskop/app/BioskopApp2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/bioskop/app/BioskopApp2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/bioskop/app/Kursi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/bioskop/app/ui/LoginUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/bioskop/app/ui/LoginUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/bioskop/database/UserDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/bioskop/database/UserDatabase.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,6 +72,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.BioskopApp2" />
@@ -98,7 +107,7 @@
       <workItem from="1682993448472" duration="1202000" />
       <workItem from="1683032905092" duration="1644000" />
       <workItem from="1683299220572" duration="1856000" />
-      <workItem from="1683301118677" duration="248000" />
+      <workItem from="1683301118677" duration="5405000" />
     </task>
     <servers />
   </component>

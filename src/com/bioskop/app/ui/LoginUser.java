@@ -33,7 +33,6 @@ public class LoginUser extends JFrame {
 
         JPanel buttonPanel = new JPanel(new GridLayout(1, 2, 10, 0));
 
-
         loginButton = new JButton("Login");
         loginButton.setBackground(new Color(0x87CEEB));
         loginButton.addActionListener(new LoginController(this));
